@@ -5,7 +5,7 @@
 2. [Contexto](#Contexto)
 3. [Metodología](#Metodología)   
     3.1. [Procesamiento y preparación de datos](#Procesamiento-y-preparación-de-datos)   
-    3.2. [Análisis técnico](#Análisis-técnico)   
+    3.2. [Análisis de hipótesis](#Análisis-de-hipótesis)   
     3.3. [Creación de Dashboard en Looker Studio](#Creación-de-Dashboard-en-Looker-Studio) 
 4. [Resultados y Recomendaciones](#Resultados-y-Recomendaciones)
 5. [Enlaces de recursos adicionales](#Enlaces-de-recursos-adicionales)  
@@ -157,7 +157,41 @@ ON
   p.product_id = r.product_id
 ```
 
-### 3.2. Análisis técnico:
+### 3.2. Análisis de hipótesis:
+
+Para comprobar las cinco hipótesis planteadas, se utilizaron consultas SQL y visualizaciones en Looker Studio. A continuación, se detallan los hallazgos de cada hipótesis:
+
+- Hi1: "Cuanto mayor sea el descuento, mejor será la calificación del producto."
+    * Resultado: No se encontró una relación clara. Los gráficos de dispersión mostraron una falta de patrón consistente, lo que indica que los descuentos no influyen significativamente en las calificaciones.
+    * Conclusión: La hipótesis fue refutada, ya que los clientes no califican mejor los productos simplemente por tener mayores descuentos.
+    
+    ``` sql 
+    SELECT 
+        CORR(discount_percentage,average_rating) FROM `project4-amazon-reviews.amazon_reviews.main_dataset` -0.1623938108687
+    ```
+
+- Hi2: "Cuanto mayor sea el número de evaluaciones (rating count), mejor será la calificación promedio."
+    * Resultado: La relación fue muy débil. Los productos con un gran número de reseñas no mostraron una tendencia a obtener calificaciones más altas. Las calificaciones tendieron a estabilizarse alrededor de un promedio, independientemente del número de evaluaciones.
+    * Conclusión: La hipótesis fue refutada. La popularidad de un producto no se traduce necesariamente en una mejor calificación promedio.
+    
+    ``` sql 
+    SELECT 
+        CORR(total_ratings, average_rating) FROM `project4-amazon-reviews.amazon_reviews.main_dataset`- 0.100244380882
+    ```
+
+- Hi3: "Los productos más caros tienden a recibir calificaciones más altas."
+    * Resultado: Hubo una evidencia moderada que respalda la hipótesis. Los productos con precios más altos, tanto originales como con descuento, tienden a recibir calificaciones más altas. Sin embargo, la correlación no fue lo suficientemente fuerte para ser concluyente.
+    * Conclusión: La hipótesis fue parcialmente respaldada. Los consumidores parecen asociar un precio más alto con mayor calidad, pero no es un factor decisivo en todas las calificaciones.
+    
+    <img src="images/hi3.png" alt="Texto alternativo" width="500"/>
+
+- Hi4: "Algunas categorías de productos tienden a recibir mejores calificaciones que otras."
+    * Resultado: Ciertas categorías, como "OfficeProducts" y "ToysGames," tienden a recibir calificaciones ligeramente más altas. Sin embargo, las diferencias no fueron extremas, con la mayoría de las categorías manteniendo calificaciones en torno a un valor promedio.
+    * Conclusión: La hipótesis fue parcialmente respaldada. Aunque hay diferencias entre las categorías, estas no son significativas en la mayoría de los casos.
+
+- Hi5: "Los productos con los mayores descuentos pertenecen a categorías específicas."
+    * Resultado: Esta hipótesis fue plenamente respaldada. Las categorías como "HomeImprovement," "ComputersAccessories," y "HealthPersonalCare" tuvieron los mayores descuentos promedio, superando el 50%.
+    * Conclusión: La hipótesis fue confirmada. Los descuentos más altos están claramente asociados con categorías específicas.
 
 
 ### 3.3. Creación de Dashboard en Looker Studio:
