@@ -23,16 +23,16 @@ Además, con la información encontrada se espera poder dar respuesta a las sigu
 - Hi1:"Cuanto mayor sea el descuento, mejor será la calificación del producto(puntuación)."  
 SQL: correlación o comparación de promedios agrupados por rangos de descuento.
 
-- Hi2: "Cuanto mayor sea el número de personas que evaluaron el producto (rating count), mejor será la calificación (promedio)."
+- Hi2: "Cuanto mayor sea el número de personas que evaluaron el producto (rating count), mejor será la calificación (promedio)."   
 SQL: cálculo de  promedios ponderados o agrupaciones de productos por el número de reseñas y su calificación promedio.
 
-- Hi3: "Los productos más caros tienen a recibir calificaciones más altas."
+- Hi3: "Los productos más caros tienen a recibir calificaciones más altas."   
 SQL: analisis de la relación entre actual_price o discounted_price y la calificación promedio.
 
-- Hi4: "Algunas categorías de productos tienden a recibir mejores calificaciones que otras."
+- Hi4: "Algunas categorías de productos tienden a recibir mejores calificaciones que otras."   
 SQL: agrupación de productos por categoría y cálculo de la calificación promedio para cada una.
 
-- Hi5: "Los productos con los mayores descuentos pertenecen a categorías específicas."
+- Hi5: "Los productos con los mayores descuentos pertenecen a categorías específicas."    
 SQL: agrupación de productos por categoría y cálculo de los descuentos promedio.
 
 ## 3. Metodología
@@ -82,7 +82,7 @@ Este conjunto de datos provienen de un repositorio de Kaggle.
     * La clave de búsqueda utilizada para la unión es *product_id*.
 
 - Revisión de calidad de datos:
-    * En la tabla *reviews, se encontraron 92 productos duplicados, lo que indica múltiples reseñas por *product_id*.
+    * En la tabla *reviews*, se encontraron 92 productos duplicados, lo que indica múltiples reseñas por *product_id*.
     * En la tabla *products*, se encontraron 96 productos duplicados, lo cual es problemático ya que cada *product_id* debería ser único, podrían afectar las uniones, causando más filas de las esperadas y posibles inconsistencias en los datos.
 
 - Resolución de duplicados:
@@ -94,6 +94,29 @@ Este conjunto de datos provienen de un repositorio de Kaggle.
 - Normalización de datos:
     * Se realizaron conversiones de datos, como la transformación de valores a porcentajes y la actualización de categorías para *discounte_percentage* y *rating*
     * La variable *category* se normalizó, identificando 136 tipos de categorías únicas, las que cuales se dividieron 6 seis niveles, utilizando unicamente 3 de estos para el analisis siguiente.
+    
+##### Query limpieza de duplicados y creación de nuevas variables en tabla products
+
+``` sql
+SELECT DISTINCT 
+  product_id, 
+  product_name, 
+  discounted_price, 
+  actual_price, 
+  (actual_price - discounted_price) AS discount_currency,  
+  discount_percentage, 
+  category,
+  CASE
+    WHEN discount_percentage = 0 THEN 'Sin descuento'
+    WHEN discount_percentage > 0 AND discount_percentage <= 0.25 THEN 'Descuento bajo'
+    WHEN discount_percentage > 0.25 AND discount_percentage <= 0.50 THEN 'Descuento medio'
+    WHEN discount_percentage > 0.50 AND discount_percentage <= 0.75 THEN 'Descuento Alto'
+    ELSE 'Remate'
+  END AS discount_category
+FROM 
+  `project4-amazon-reviews.amazon_reviews.products`
+WHERE product_id IS NOT NULL;
+``` 
 
 - Vistas y creación de tablas auxiliares:
     * Se crearon tablas auxiliares sin duplicados y con conversiones adecuadas en los datos de ambas tablas.
@@ -101,6 +124,38 @@ Este conjunto de datos provienen de un repositorio de Kaggle.
 
 - Unión Final de las Tablas:
     * Se realizó la unión de las tres vistas, utilizando `LEFT JOIN`, resultando en 1,355 registros válidos.
+    
+##### Query unión de tablas vista
+
+``` sql    
+SELECT DISTINCT
+  p.product_id,
+  p.actual_price,
+  p.discounted_price,
+  p.discount_category,
+  p.discount_percentage,
+  p.discount_currency,
+  p.category,
+  p.product_name,
+  c.cat_1,
+  c.cat_2,
+  c.cat_3,
+  c.clean_proname,
+  r.average_rating,
+  r.total_ratings,
+  r.review_title,
+  r.categoria_rating,
+FROM
+  `project4-amazon-reviews.amazon_reviews.product_ready` AS p
+LEFT JOIN
+  `project4-amazon-reviews.amazon_reviews.product_category` AS c
+ON 
+  p.product_id = c.product_id  
+LEFT JOIN
+  `project4-amazon-reviews.amazon_reviews.reviews_ready` AS r
+ON 
+  p.product_id = r.product_id
+```
 
 ### 3.2. Análisis técnico:
 
