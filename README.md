@@ -22,17 +22,17 @@ Datalab, una empresa líder en análisis de datos, se ha posicionado como un ali
 
 ### 3.1. Procesamiento y preparación de datos:
 
-#### 1. Herramientas:
+#### a. Herramientas:
 * Google Sheets
 * BigQuery
 * Looker Studio 
 * Canva
 * Loom
 
-#### 2. Lenguajes:
+#### b. Lenguajes:
 * SQL en BigQuery
 
-#### 3. Descripción de las fuentes de datos:
+#### c. Descripción de las fuentes de datos:
 
 Este conjunto de datos provienen de un repositorio de Kaggle.
 
@@ -58,7 +58,7 @@ Este conjunto de datos provienen de un repositorio de Kaggle.
 - *Rating_count*: número de personas que votaron por la calificación de Amazon
 
 
-#### 4. Limpieza y transformación de datos:
+#### c. Limpieza y transformación de datos:
 
 ### 3.2. Análisis técnico:
 
