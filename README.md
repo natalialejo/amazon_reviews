@@ -228,10 +228,28 @@ Este dashboard incluye los siguientes elementos clave:
 
 ## 4. Resultados y recomendaciones
 
-## 5. Enlaces de recursos adicionales:
+- Resultados:
 
-- [Dashboard Looker Studio]()
-- [PPT Google Slide]()
+* La mayoría de las categorías de productos mantienen una calificación promedio cercana a 4, lo que indica una satisfacción general positiva entre los clientes.
+
+* Las hipótesis sobre la relación entre descuentos y calificaciones, así como el número de reseñas y la calidad percibida, no fueron respaldadas por los datos. 
+
+* Sin embargo, se encontró una tendencia donde los productos más caros suelen recibir calificaciones ligeramente más altas. Existe una percepción entre los consumidores de que los productos más caros son de mejor calidad, lo que se refleja en sus calificaciones.
+
+* Las categorías de productos muestran diferencias en el nivel de descuento promedio, lo que indica que los vendedores aplican estrategias de descuento más agresivas en estos segmentos para impulsar las ventas.
+
+- Recomendaciones:
+
+* Analizar el tiempo de venta y el impacto de los descuentos: Obtener datos sobre el tiempo que tarda un producto en venderse desde su publicación permitiría identificar qué categorías o rangos de precios se venden más rápidamente, además, analizar cómo los descuentos influyen en el tiempo de venta podría evaluar la efectividad de las promociones y su impacto en la decisión de compra.
+
+* Para vendedores:  Enfocarse en la calidad del producto y en la experiencia del cliente. Esto mejora las calificaciones y refuerza la imagen de Amazon como una plataforma confiable, donde los clientes están dispuestos a pagar por productos de valor.
+
+* Para consumidores: Evaluar la calidad en función del precio y la categoría. Aunque los productos más caros suelen tener mejores calificaciones, no siempre es así. Los compradores deben equilibrar el precio, las reseñas y la categoría para tomar la mejor decisión.
+
+## 5. Enlaces de recursos adicionales
+
+- [Dashboard Looker Studio](https://lookerstudio.google.com/s/op9gu-h_MZw)
+- [PPT Canva](https://www.canva.com/design/DAGQ_GP164E/Fzz61Fj53f4Z9KjFj7NHcw/edit)
 - [Presentación Loom]()  
 
 **Elaborado por:  
