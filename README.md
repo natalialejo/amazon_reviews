@@ -20,7 +20,7 @@ Datalab, una empresa líder en análisis de datos, se ha posicionado como un ali
 
 Además, con la información encontrada se espera poder dar respuesta a las siguientes hipótesis propuestas (basados en datos numéricos y categóricos):
 
-- Hi1:"Cuanto mayor sea el descuento, mejor será la calificación del producto(puntuación)."
+- Hi1:"Cuanto mayor sea el descuento, mejor será la calificación del producto(puntuación)."  
 SQL: correlación o comparación de promedios agrupados por rangos de descuento.
 
 - Hi2: "Cuanto mayor sea el número de personas que evaluaron el producto (rating count), mejor será la calificación (promedio)."
