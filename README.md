@@ -226,7 +226,7 @@ Este dashboard incluye los siguientes elementos clave:
     
      ##### Visualización de Dasboard
      
-    <img src="images/dashboard.png" alt="Texto alternativo" width="500"/>
+    <img src="images/dashboard.png" alt="Texto alternativo">
 
 ## 4. Resultados y recomendaciones
 
