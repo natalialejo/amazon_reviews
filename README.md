@@ -193,11 +193,19 @@ Para comprobar las cinco hipótesis planteadas, se utilizaron consultas SQL y vi
 
 - Hi4: "Algunas categorías de productos tienden a recibir mejores calificaciones que otras."
     * Resultado: Ciertas categorías, como "OfficeProducts" y "ToysGames," tienden a recibir calificaciones ligeramente más altas. Sin embargo, las diferencias no fueron extremas, con la mayoría de las categorías manteniendo calificaciones en torno a un valor promedio.
-    * Conclusión: La hipótesis fue parcialmente respaldada. Aunque hay diferencias entre las categorías, estas no son significativas en la mayoría de los casos.
-
+    * Conclusión: La hipótesis fue parcialmente respaldada. Aunque hay diferencias entre las categorías, estas no son significativas en la mayoría de los casos.   
+    
+    ##### Gráfica de barras Hi4
+    
+    <img src="images/hi4.png" alt="Texto alternativo" width="500"/>
+    
 - Hi5: "Los productos con los mayores descuentos pertenecen a categorías específicas."
     * Resultado: Esta hipótesis fue plenamente respaldada. Las categorías como "HomeImprovement," "ComputersAccessories," y "HealthPersonalCare" tuvieron los mayores descuentos promedio, superando el 50%.
     * Conclusión: La hipótesis fue confirmada. Los descuentos más altos están claramente asociados con categorías específicas.
+    
+     ##### Mapa de calor Hi5
+    
+    <img src="images/hi5.png" alt="Texto alternativo" width="500"/>
 
 
 ### 3.3. Creación de Dashboard en Looker Studio:
