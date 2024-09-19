@@ -212,17 +212,15 @@ Para comprobar las cinco hipótesis planteadas, se utilizaron consultas SQL y vi
 
 Este dashboard incluye los siguientes elementos clave:
 
-- Filtros Interactivos: Permiten segmentar los datos por categoría de producto, rango de precios, rango de descuento, calificaciones (1 a 5 estrellas) y número de reseñas, facilitando la exploración personalizada de los datos.
+- Botón de Dimensiones: Permite cambiar las dimensiones a categorías o rangos de descuento, para una exploración más profunda de los datos.   
 
-- Scorecards (KPI): Muestran métricas clave como el número total de productos analizados, el promedio de calificación, el promedio de descuento aplicado, el producto con mayor número de reseñas y el producto con mayor descuento.
+- Filtros Interactivos: Permiten segmentar los datos por categoría de producto, rango de precios, rango de descuento, calificaciones (1 a 5 estrellas) y número de reseñas, facilitando la exploración personalizada de los datos.   
+
+- Scorecards (KPI): Muestran métricas clave como el número total de productos analizados, el promedio de calificación, el promedio de descuento aplicado, el producto con mayor número de reseñas y el producto con mayor descuento.  
 
 - Visualizaciones:
-    * Scorecard: estado de productos, promedios y datos relevantes.
-    * Botón de Dimensiones: Permite cambiar las dimensiones visualizadas, como categorías o rangos de descuento y rating.
-    * Gráficas de Barras: Comparan calificaciones por categoría, distribución de descuentos y precios.
+    * Gráficas de líneas, circular y de barras: Comparan calificaciones por categoría, distribución de descuentos y precios.
     * Tablas: Ofrecen detalles específicos de productos con mayores calificaciones, más reseñas y mayores descuentos.
-
-    Botón de Dimensiones: Permite cambiar las dimensiones visualizadas, como categorías o rangos de descuento, para una exploración más profunda de los datos.
     
      ##### Visualización de Dasboard
      
