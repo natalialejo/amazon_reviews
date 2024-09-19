@@ -165,6 +165,7 @@ Para comprobar las cinco hipótesis planteadas, se utilizaron consultas SQL y vi
     * Resultado: No se encontró una relación clara. Los gráficos de dispersión mostraron una falta de patrón consistente, lo que indica que los descuentos no influyen significativamente en las calificaciones.
     * Conclusión: La hipótesis fue refutada, ya que los clientes no califican mejor los productos simplemente por tener mayores descuentos.   
     
+    ##### Query  de correlacón Hi1
     
     ``` sql 
     SELECT 
@@ -175,6 +176,7 @@ Para comprobar las cinco hipótesis planteadas, se utilizaron consultas SQL y vi
     * Resultado: La relación fue muy débil. Los productos con un gran número de reseñas no mostraron una tendencia a obtener calificaciones más altas. Las calificaciones tendieron a estabilizarse alrededor de un promedio, independientemente del número de evaluaciones.
     * Conclusión: La hipótesis fue refutada. La popularidad de un producto no se traduce necesariamente en una mejor calificación promedio.   
     
+    ##### Query  de correlación Hi2
     
     ``` sql 
     SELECT 
@@ -185,6 +187,7 @@ Para comprobar las cinco hipótesis planteadas, se utilizaron consultas SQL y vi
     * Resultado: Hubo una evidencia moderada que respalda la hipótesis. Los productos con precios más altos, tanto originales como con descuento, tienden a recibir calificaciones más altas. Sin embargo, la correlación no fue lo suficientemente fuerte para ser concluyente.
     * Conclusión: La hipótesis fue parcialmente respaldada. Los consumidores parecen asociar un precio más alto con mayor calidad, pero no es un factor decisivo en todas las calificaciones.    
     
+    ##### Gráfica de línea Hi3
     
     <img src="images/hi3.png" alt="Texto alternativo" width="500"/>
 
